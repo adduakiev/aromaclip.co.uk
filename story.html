@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20132%20132%27%3E%3Crect%20width%3D%27132%27%20height%3D%27132%27%20rx%3D%2730%27%20fill%3D%27%231a1714%27/%3E%3Cg%20transform%3D%27translate%280%2018%29%27%20fill%3D%27none%27%20stroke%3D%27%23f4ede1%27%20stroke-width%3D%274%27%20stroke-linecap%3D%27round%27%3E%3Ccircle%20cx%3D%2744%27%20cy%3D%2748%27%20r%3D%2734%27/%3E%3Ccircle%20cx%3D%2788%27%20cy%3D%2748%27%20r%3D%2734%27/%3E%3Cpath%20d%3D%27M66%2C22%20A34%2C34%200%200%201%2066%2C74%20A34%2C34%200%200%201%2066%2C22%20Z%27/%3E%3Cpath%20d%3D%27M66%2C22%20L66%2C74%27/%3E%3C/g%3E%3Cpath%20d%3D%27M66%2C40%20L66%2C58%20L59%2C48%20A34%2C34%200%200%201%2066%2C40%20Z%27%20fill%3D%27%23c19a5b%27/%3E%3C/svg%3E">
+<title>Story — AromaClip</title>
+<meta name="description" content="The AromaClip story — a pocket inhaler with natural essential oils, developed in Berlin.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#1a1714; --ink:#1a1714; --cream:#f4ede1; --sand:#ebe0cd;
+    --amber:#c19a5b; --brown:#6b5d4a;
+    --serif:"Newsreader", Georgia, serif;
+    --mono:"IBM Plex Mono", ui-monospace, monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:var(--serif);background:var(--ink);color:var(--cream);font-weight:400;-webkit-font-smoothing:antialiased;}
+
+  nav{
+    position:absolute;top:0;left:0;width:100%;z-index:10;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:34px 60px;
+  }
+  .logo{font-family:var(--serif);font-size:24px;font-weight:500;color:var(--cream);text-decoration:none;}
+  .nav-right{display:flex;align-items:center;gap:40px;}
+  .nav-links{display:flex;gap:34px;}
+  .nav-links a{font-family:var(--serif);font-size:15px;letter-spacing:0.03em;color:var(--cream);text-decoration:none;opacity:0.82;transition:opacity .3s;}
+  .nav-links a:hover{opacity:1;}
+  .nav-links a.active{opacity:1;border-bottom:1px solid var(--amber);padding-bottom:2px;}
+  .cart{display:flex;color:var(--cream);opacity:0.82;}
+  .cart:hover{opacity:1;}
+
+  .story-hero{position:relative;height:100vh;min-height:660px;background:#1a1714;overflow:hidden;}
+  .story-hero .art{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;}
+
+  .story-caption{position:absolute;z-index:5;left:8%;top:26%;max-width:430px;}
+  .story-caption .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:0.2em;color:var(--amber);}
+  .story-caption h1{
+    font-family:var(--serif);font-weight:400;font-size:46px;line-height:1.1;letter-spacing:-0.01em;
+    color:var(--cream);margin-top:22px;
+  }
+  .story-caption .lead{font-family:var(--serif);font-style:italic;font-size:19px;line-height:1.55;color:var(--cream);opacity:0.72;margin-top:20px;}
+  .story-caption .cta{
+    display:inline-block;margin-top:30px;
+    font-family:var(--mono);font-size:12px;letter-spacing:0.2em;color:var(--amber);text-decoration:none;
+    border-bottom:1px solid rgba(193,154,91,0.5);padding-bottom:5px;transition:border-color .3s;
+  }
+  .story-caption .cta:hover{border-color:var(--amber);}
+
+  footer{
+    background:var(--ink);color:var(--cream);
+    display:flex;align-items:center;justify-content:space-between;
+    padding:60px;border-top:1px solid rgba(244,237,225,0.12);
+  }
+  footer .tagline{font-family:var(--serif);font-style:italic;font-size:20px;}
+  footer .addr{font-family:var(--mono);font-size:11px;letter-spacing:0.14em;opacity:0.7;}
+
+  @media (max-width:860px){
+    nav{padding:22px 24px;}
+    .nav-links{gap:20px;}
+    .nav-links a{font-size:13px;}
+    .nav-right{gap:22px;}
+    .story-hero{height:auto;min-height:0;padding-top:80px;}
+    .story-caption{position:static;max-width:none;padding:0 24px;margin-bottom:4px;}
+    .story-caption h1{font-size:34px;}
+    .story-hero .art{position:relative;height:auto;display:block;}
+    footer{flex-direction:column;gap:20px;text-align:center;padding:50px 24px;}
+  }
+  .cart{position:relative;}
+  .cart-count{position:absolute;top:-9px;right:-11px;min-width:16px;height:16px;padding:0 4px;background:var(--amber);color:var(--black);border-radius:9px;font-family:var(--mono);font-size:10px;display:none;align-items:center;justify-content:center;line-height:1;}
+</style>
+<style>.logo{display:inline-flex;align-items:center;line-height:0}.logo .logo-mark{height:32px;width:auto;display:block}</style>
+<style>.philosophy{background:#1a1714;color:var(--cream);padding:130px 8% 150px;border-top:1px solid rgba(244,237,225,0.10);}.philo-wrap{max-width:1180px;margin:0 auto;}.philo-grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:90px;align-items:start;}.philo-statement{font-family:var(--serif);font-weight:400;font-size:30px;line-height:1.16;letter-spacing:-0.01em;color:var(--cream);}.philo-right .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:0.2em;color:var(--amber);display:block;}.philo-right p{font-family:var(--serif);font-size:18px;line-height:1.75;color:var(--cream);opacity:0.74;margin-top:22px;}.philo-right p + p{margin-top:16px;}@media(max-width:760px){.philosophy{padding:80px 7% 96px;}.philo-grid{grid-template-columns:1fr;gap:38px;}.philo-statement{font-size:22px;}}</style>
+<style>.story-body{background:#1a1714;color:var(--cream);padding:130px 8% 40px;}.sb-wrap{max-width:1180px;margin:0 auto;}.story-body .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:0.2em;color:var(--amber);display:block;}.sb-lead{font-family:var(--serif);font-weight:400;font-size:30px;line-height:1.32;letter-spacing:-0.01em;color:var(--cream);max-width:900px;margin-top:22px;}.sb-cols{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-top:96px;}.sb-col .eyebrow{margin-bottom:16px;}.sb-col p{font-family:var(--serif);font-size:18px;line-height:1.78;color:var(--cream);opacity:0.74;}.sb-close{font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.5;color:var(--cream);opacity:0.9;max-width:660px;margin-top:96px;}.story-body .cta{margin-top:26px;}@media(max-width:760px){.story-body{padding:80px 7% 20px;}.sb-lead{font-size:22px;}.sb-cols{grid-template-columns:1fr;gap:38px;margin-top:56px;}.sb-close{font-size:18px;margin-top:60px;}}</style>
+<style>@media(max-width:760px){.story-caption .lead{font-size:17px;}.tagline{font-size:18px;}}</style>
+<style>.story-body .cta{display:inline-block;margin-top:34px;font-family:var(--mono);font-size:12px;letter-spacing:.22em;color:var(--amber);text-decoration:none;border:1px solid var(--amber);padding:17px 42px;transition:background .35s,color .35s;}.story-body .cta:hover{background:var(--amber);color:var(--black);}</style>
+<style>.art-m{display:none;}@media (max-width:860px){.story-hero .art:not(.art-m){display:none !important;}.story-hero .art-m{display:block !important;position:static !important;width:100% !important;max-width:320px;height:auto !important;margin:46px auto 0;}}</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo"><svg class="logo-mark" viewBox="0 0 132 96" xmlns="http://www.w3.org/2000/svg" fill="none" role="img" aria-label="AromaClip"><circle cx="44" cy="48" r="34" stroke="#f4ede1" stroke-width="2.1"/><circle cx="88" cy="48" r="34" stroke="#f4ede1" stroke-width="2.1"/><path d="M66,22.08 L66,40 L59.16,30 A34,34 0 0 1 66,22.08 Z" fill="#c19a5b"/><path d="M66,22.08 A34,34 0 0 1 66,73.92 A34,34 0 0 1 66,22.08 Z" stroke="#f4ede1" stroke-width="2.1"/><path d="M66,22.08 L66,73.92" stroke="#f4ede1" stroke-width="2.1"/><path d="M66,40 L59.16,30" stroke="#f4ede1" stroke-width="2.1" stroke-linecap="round"/><path d="M66,40 L72.84,30" stroke="#f4ede1" stroke-width="2.1" stroke-linecap="round"/><path d="M66,52 L54.53,42" stroke="#f4ede1" stroke-width="2.1" stroke-linecap="round"/><path d="M66,52 L77.47,42" stroke="#f4ede1" stroke-width="2.1" stroke-linecap="round"/><path d="M66,64 L54.53,54" stroke="#f4ede1" stroke-width="2.1" stroke-linecap="round"/><path d="M66,64 L77.47,54" stroke="#f4ede1" stroke-width="2.1" stroke-linecap="round"/></svg></a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="index.html#collection">Shop</a>
+      <a href="story.html" class="active">Story</a>
+      <a href="science.html">Science</a>
+      <a href="hotels.html">Hotels</a>
+    </div>
+    <a href="cart.html" class="cart" aria-label="Cart">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+        <path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/>
+      </svg>
+    </a>
+  </div>
+</nav>
+
+<section class="story-hero">
+  <div class="story-caption">
+    <div class="eyebrow">The AromaClip story</div>
+    <h1>The body remembers a simpler thing — to breathe.</h1>
+    <p class="lead">One inhale, drawn without lifting the pen. The clip does the rest.</p>
+    <a href="index.html#collection" class="cta">Explore the collection</a>
+  </div>
+
+  <svg class="art" viewBox="0 0 1200 760" preserveAspectRatio="xMaxYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A single continuous line — a drawn breath" fill="none" stroke="#e1d5c7" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><path d="M569.7,407.7 C668.7,381.3 681.9,294.2 780.9,296.8 C874.6,299.5 870.7,407.7 791.5,407.7 C733.4,407.7 737.3,336.4 808.6,336.4 C932.7,336.4 945.9,466.8 1064.7,434.1 C1130.7,417 1137.3,348.3 1170.3,348.3"/><circle cx="1170.3" cy="348.3" r="10" fill="#e1d5c7" stroke="none"/></svg>
+  <svg class="art art-m" viewBox="540 268 670 232" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="none" stroke="#e1d5c7" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><path d="M569.7,407.7 C668.7,381.3 681.9,294.2 780.9,296.8 C874.6,299.5 870.7,407.7 791.5,407.7 C733.4,407.7 737.3,336.4 808.6,336.4 C932.7,336.4 945.9,466.8 1064.7,434.1 C1130.7,417 1137.3,348.3 1170.3,348.3"/><circle cx="1170.3" cy="348.3" r="10" fill="#e1d5c7" stroke="none"/></svg>
+</section>
+
+
+
+<!-- STORY BODY -->
+<section class="story-body">
+  <div class="sb-wrap">
+    <div class="eyebrow">The idea</div>
+    <p class="sb-lead">AromaClip is a nasal micro-inhaler filled with one hundred percent natural BIO essential oils — a quiet alternative to caffeine, sprays and pills. Clip it to the nose, draw a slow breath, and let something natural do the rest. Compact enough to forget you are carrying it: at the desk, in the gym, on the road.</p>
+    <div class="sb-cols">
+      <div class="sb-col">
+        <div class="eyebrow">Three states</div>
+        <p>One clip, three blends. Breathe, for a clear, open inhale. Focus, for steady attention without caffeine. Sleep, to soften the evening into rest. Each is composed for a defined character, not a generic scent.</p>
+      </div>
+      <div class="sb-col">
+        <div class="eyebrow">Made with care</div>
+        <p>Developed in Berlin with ENT specialists, pharmacologists and aromatherapists, from certified BIO oils and medical-grade silicone. Light, hypoallergenic and reusable — kept in its case between moments, ready whenever the day asks.</p>
+      </div>
+    </div>
+    <p class="sb-close">Not a scent for the mood, but a small instrument for the breath — carried, and returned to, as often as you need.</p>
+    <a href="index.html#collection" class="cta">Explore the collection</a>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy">
+  <div class="philo-wrap">
+    <div class="philo-grid">
+      <div class="philo-statement">A breath, taken with intention, is the smallest gesture of self-care.</div>
+      <div class="philo-right">
+        <div class="eyebrow">Our philosophy</div>
+        <p>AromaClip began in Berlin, in the quiet space between clinical practice and everyday life. Working alongside ENT specialists, we kept returning to a simple observation: the breath is the one instrument we always carry, and the one we most often forget to use.</p>
+        <p>So we made something small enough to keep in a pocket and considered enough to trust — a silicone clip, three essential blends, nothing added that the nose does not need. No propellants. No pills. Only the deliberate act of breathing well.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="tagline">Breathe. Feel. Live.</div>
+  <div class="addr">Rhinofilt GmbH · Berlin</div>
+</footer>
+
+<script>
+(function(){var K='aromaclip_cart';
+ window.getCart=function(){try{return JSON.parse(localStorage.getItem(K))||[]}catch(e){return[]}};
+ window.saveCart=function(c){try{localStorage.setItem(K,JSON.stringify(c))}catch(e){}updateCartCount()};
+ window.addToBag=function(id,name,price){var c=getCart();var it=c.find(function(x){return x.id===id});if(it){it.qty++}else{c.push({id:id,name:name,price:price,qty:1})}saveCart(c)};
+ window.updateCartCount=function(){var a=document.querySelector('.cart');if(!a)return;var b=a.querySelector('.cart-count');if(!b){b=document.createElement('span');b.className='cart-count';a.appendChild(b)}var n=getCart().reduce(function(s,x){return s+x.qty},0);b.textContent=n;b.style.display=n>0?'flex':'none'};
+ document.addEventListener('DOMContentLoaded',updateCartCount);})();
+</script>
+</body>
+</html>

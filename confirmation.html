@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20132%20132%27%3E%3Crect%20width%3D%27132%27%20height%3D%27132%27%20rx%3D%2730%27%20fill%3D%27%231a1714%27/%3E%3Cg%20transform%3D%27translate%280%2018%29%27%20fill%3D%27none%27%20stroke%3D%27%23f4ede1%27%20stroke-width%3D%274%27%20stroke-linecap%3D%27round%27%3E%3Ccircle%20cx%3D%2744%27%20cy%3D%2748%27%20r%3D%2734%27/%3E%3Ccircle%20cx%3D%2788%27%20cy%3D%2748%27%20r%3D%2734%27/%3E%3Cpath%20d%3D%27M66%2C22%20A34%2C34%200%200%201%2066%2C74%20A34%2C34%200%200%201%2066%2C22%20Z%27/%3E%3Cpath%20d%3D%27M66%2C22%20L66%2C74%27/%3E%3C/g%3E%3Cpath%20d%3D%27M66%2C40%20L66%2C58%20L59%2C48%20A34%2C34%200%200%201%2066%2C40%20Z%27%20fill%3D%27%23c19a5b%27/%3E%3C/svg%3E">
+<title>Order confirmed — AromaClip</title>
+<meta name="description" content="Your AromaClip order.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--black:#1a1714;--ink:#1a1714;--cream:#f4ede1;--sand:#ebe0cd;--amber:#c19a5b;--brown:#6b5d4a;
+    --serif:"Newsreader",Georgia,serif;--mono:"IBM Plex Mono",ui-monospace,monospace;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:var(--serif);background:var(--cream);color:var(--black);-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column;}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:26px 60px;background:var(--ink);}
+  .logo{font-family:var(--serif);font-size:24px;font-weight:500;color:var(--cream);text-decoration:none;}
+  .nav-right{display:flex;align-items:center;gap:40px;}
+  .nav-links{display:flex;gap:34px;}
+  .nav-links a{font-family:var(--serif);font-size:15px;letter-spacing:.03em;color:var(--cream);text-decoration:none;opacity:.82;}
+  .nav-links a:hover{opacity:1;}
+  .cart{display:flex;color:var(--cream);opacity:.82;}
+
+  .conf{flex:1;max-width:760px;width:100%;margin:0 auto;padding:110px 60px 120px;}
+  .conf .mark{width:56px;height:56px;border:1px solid var(--amber);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--amber);margin-bottom:34px;}
+  .conf .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--amber);}
+  .conf h1{font-family:var(--serif);font-weight:400;font-size:52px;letter-spacing:-.02em;margin-top:16px;}
+  .conf .lead{font-family:var(--serif);font-size:18px;line-height:1.6;color:var(--brown);margin-top:22px;max-width:520px;}
+  .conf .lead b{color:var(--black);font-weight:500;}
+  .order{margin-top:50px;border-top:1px solid rgba(107,93,74,.24);}
+  .o-row{display:grid;grid-template-columns:40px 1fr auto;align-items:center;gap:16px;padding:18px 0;border-bottom:1px solid rgba(107,93,74,.16);}
+  .o-row svg{width:36px;height:36px;}
+  .o-name{font-family:var(--serif);font-size:18px;}
+  .o-name span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--brown);margin-top:4px;}
+  .o-line{font-family:var(--mono);font-size:13px;}
+  .o-total{display:flex;justify-content:space-between;align-items:baseline;margin-top:22px;}
+  .o-total .l{font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:var(--brown);}
+  .o-total .v{font-family:var(--serif);font-size:30px;}
+  .ship{margin-top:40px;font-family:var(--serif);font-size:15px;line-height:1.7;color:var(--brown);}
+  .ship .lbl{font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--brown);display:block;margin-bottom:6px;text-transform:uppercase;}
+  .actions{margin-top:52px;display:flex;gap:26px;align-items:center;}
+  .btn{font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:var(--amber);text-decoration:none;border:1px solid var(--amber);padding:16px 36px;transition:background .35s,color .35s;}
+  .btn:hover{background:var(--amber);color:var(--black);}
+  .lnk{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--brown);text-decoration:none;}
+  .lnk:hover{color:var(--black);}
+  footer{background:var(--ink);color:var(--cream);display:flex;align-items:center;justify-content:space-between;padding:46px 60px;}
+  footer .tagline{font-family:var(--serif);font-style:italic;font-size:20px;}
+  footer .addr{font-family:var(--mono);font-size:11px;letter-spacing:.14em;opacity:.7;}
+  @media (max-width:760px){nav{padding:20px 24px;}.nav-links{gap:20px;}.nav-links a{font-size:13px;}
+    .conf{padding:80px 24px 90px;}.conf h1{font-size:38px;}.actions{flex-direction:column;align-items:stretch;}
+    .btn{text-align:center;}footer{flex-direction:column;gap:16px;text-align:center;padding:40px 24px;}}
+</style>
+<style>.logo{display:inline-flex;align-items:center;line-height:0}.logo .logo-mark{height:32px;width:auto;display:block}</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo"><svg class="logo-mark" viewBox="0 0 132 96" xmlns="http://www.w3.org/2000/svg" fill="none" role="img" aria-label="AromaClip"><circle cx="44" cy="48" r="34" stroke="#f4ede1" stroke-width="2.1"/><circle cx="88" cy="48" r="34" stroke="#f4ede1" stroke-width="2.1"/><path d="M66,22.08 L66,40 L59.16,30 A34,34 0 0 1 66,22.08 Z" fill="#c19a5b"/><path d="M66,22.08 A34,34 0 0 1 66,73.92 A34,34 0 0 1 66,22.08 Z" stroke="#f4ede1" stroke-width="2.1"/><path d="M66,22.08 L66,73.92" stroke="#f4ede1" stroke-width="2.1"/><path d="M66,40 L59.16,30" stroke="#f4ede1" stroke-width="2.1" stroke-linecap="round"/><path d="M66,40 L72.84,30" stroke="#f4ede1" stroke-width="2.1" stroke-linecap="round"/><path d="M66,52 L54.53,42" stroke="#f4ede1" stroke-width="2.1" stroke-linecap="round"/><path d="M66,52 L77.47,42" stroke="#f4ede1" stroke-width="2.1" stroke-linecap="round"/><path d="M66,64 L54.53,54" stroke="#f4ede1" stroke-width="2.1" stroke-linecap="round"/><path d="M66,64 L77.47,54" stroke="#f4ede1" stroke-width="2.1" stroke-linecap="round"/></svg></a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="index.html#collection">Shop</a>
+      <a href="story.html">Story</a>
+      <a href="science.html">Science</a>
+      <a href="hotels.html">Hotels</a>
+    </div>
+    <a href="cart.html" class="cart" aria-label="Cart">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+        <path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+    </a>
+  </div>
+</nav>
+
+<section class="conf" id="conf">
+  <div class="mark">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 13l4 4L19 7"/></svg>
+  </div>
+  <div class="eyebrow" id="orderNo">Order —</div>
+  <h1>Thank you.</h1>
+  <p class="lead" id="lead">Your order is confirmed.</p>
+
+  <div class="order" id="orderItems"></div>
+  <div class="o-total"><span class="l">Total paid</span><span class="v" id="orderTotal">€0</span></div>
+
+  <div class="ship" id="shipBlock"></div>
+
+  <div class="actions">
+    <a class="btn" href="index.html#collection">Continue shopping</a>
+    <a class="lnk" href="index.html">Back to home</a>
+  </div>
+</section>
+
+<footer>
+  <div class="tagline">Breathe. Feel. Live.</div>
+  <div class="addr">Rhinofilt GmbH · Berlin</div>
+</footer>
+
+<script>
+var ICONS={
+ breathe:'<svg viewBox="0 0 48 48" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="24" x2="42" y2="24" stroke="#cdbfa3" stroke-width="1"/><path d="M 6.0,24.00 L 6.5,23.33 L 7.0,22.68 L 7.5,22.08 L 8.0,21.55 L 8.5,21.10 L 9.0,20.76 L 9.5,20.52 L 10.0,20.41 L 10.5,20.42 L 11.0,20.56 L 11.5,20.82 L 12.0,21.19 L 12.5,21.65 L 13.0,22.20 L 13.5,22.81 L 14.0,23.46 L 14.5,24.13 L 15.0,24.80 L 15.5,25.44 L 16.0,26.03 L 16.5,26.55 L 17.0,26.97 L 17.5,27.30 L 18.0,27.51 L 18.5,27.60 L 19.0,27.56 L 19.5,27.40 L 20.0,27.12 L 20.5,26.73 L 21.0,26.24 L 21.5,25.68 L 22.0,25.06 L 22.5,24.40 L 23.0,23.73 L 23.5,23.07 L 24.0,22.44 L 24.5,21.86 L 25.0,21.36 L 25.5,20.95 L 26.0,20.65 L 26.5,20.46 L 27.0,20.40 L 27.5,20.46 L 28.0,20.65 L 28.5,20.95 L 29.0,21.36 L 29.5,21.86 L 30.0,22.44 L 30.5,23.07 L 31.0,23.73 L 31.5,24.40 L 32.0,25.06 L 32.5,25.68 L 33.0,26.24 L 33.5,26.73 L 34.0,27.12 L 34.5,27.40 L 35.0,27.56 L 35.5,27.60 L 36.0,27.51 L 36.5,27.30 L 37.0,26.97 L 37.5,26.55 L 38.0,26.03 L 38.5,25.44 L 39.0,24.80 L 39.5,24.13 L 40.0,23.46 L 40.5,22.81 L 41.0,22.20 L 41.5,21.65 L 42.0,21.19" stroke="#c19a5b" stroke-width="2"/></svg>',
+ focus:'<svg viewBox="0 0 48 48" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="24" x2="42" y2="24" stroke="#cdbfa3" stroke-width="1"/><path d="M 6.0,24.00 L 6.5,23.40 L 7.0,22.85 L 7.5,22.38 L 8.0,22.04 L 8.5,21.84 L 9.0,21.81 L 9.5,21.94 L 10.0,22.23 L 10.5,22.65 L 11.0,23.17 L 11.5,23.76 L 12.0,24.36 L 12.5,24.94 L 13.0,25.44 L 13.5,25.84 L 14.0,26.10 L 14.5,26.20 L 15.0,26.13 L 15.5,25.91 L 16.0,25.53 L 16.5,25.05 L 17.0,24.48 L 17.5,23.88 L 18.0,23.29 L 18.5,22.75 L 19.0,22.30 L 19.5,21.99 L 20.0,21.82 L 20.5,21.82 L 21.0,21.99 L 21.5,22.30 L 22.0,22.75 L 22.5,23.29 L 23.0,23.88 L 23.5,24.48 L 24.0,25.05 L 24.5,25.53 L 25.0,25.91 L 25.5,26.13 L 26.0,26.20 L 26.5,26.10 L 27.0,25.84 L 27.5,25.44 L 28.0,24.94 L 28.5,24.36 L 29.0,23.76 L 29.5,23.17 L 30.0,22.65 L 30.5,22.23 L 31.0,21.94 L 31.5,21.81 L 32.0,21.84 L 32.5,22.04 L 33.0,22.38 L 33.5,22.85 L 34.0,23.40 L 34.5,24.00 L 35.0,24.60 L 35.5,25.15 L 36.0,25.62 L 36.5,25.96 L 37.0,26.16 L 37.5,26.19 L 38.0,26.06 L 38.5,25.77 L 39.0,25.35 L 39.5,24.83 L 40.0,24.24 L 40.5,23.64 L 41.0,23.06 L 41.5,22.56 L 42.0,22.16" stroke="#c19a5b" stroke-width="2"/></svg>',
+ sleep:'<svg viewBox="0 0 48 48" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="24" x2="42" y2="24" stroke="#cdbfa3" stroke-width="1"/><path d="M 6.0,30.06 L 6.5,30.48 L 7.0,30.80 L 7.5,31.04 L 8.0,31.17 L 8.5,31.20 L 9.0,31.13 L 9.5,30.95 L 10.0,30.68 L 10.5,30.32 L 11.0,29.86 L 11.5,29.33 L 12.0,28.71 L 12.5,28.04 L 13.0,27.30 L 13.5,26.52 L 14.0,25.70 L 14.5,24.85 L 15.0,24.00 L 15.5,23.15 L 16.0,22.30 L 16.5,21.48 L 17.0,20.70 L 17.5,19.96 L 18.0,19.29 L 18.5,18.67 L 19.0,18.14 L 19.5,17.68 L 20.0,17.32 L 20.5,17.05 L 21.0,16.87 L 21.5,16.80 L 22.0,16.83 L 22.5,16.96 L 23.0,17.20 L 23.5,17.52 L 24.0,17.94 L 24.5,18.45 L 25.0,19.03 L 25.5,19.69 L 26.0,20.40 L 26.5,21.17 L 27.0,21.97 L 27.5,22.81 L 28.0,23.66 L 28.5,24.51 L 29.0,25.36 L 29.5,26.19 L 30.0,26.99 L 30.5,27.75 L 31.0,28.45 L 31.5,29.09 L 32.0,29.66 L 32.5,30.15 L 33.0,30.55 L 33.5,30.86 L 34.0,31.07 L 34.5,31.18 L 35.0,31.19 L 35.5,31.10 L 36.0,30.91 L 36.5,30.62 L 37.0,30.24 L 37.5,29.76 L 38.0,29.21 L 38.5,28.58 L 39.0,27.89 L 39.5,27.15 L 40.0,26.35 L 40.5,25.53 L 41.0,24.68 L 41.5,23.83 L 42.0,22.98" stroke="#c19a5b" stroke-width="2"/></svg>',
+ starter:'<svg viewBox="0 0 48 48" fill="none" stroke="#c19a5b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8,15 Q16,9 24,15 T40,15"/><path d="M8,24 Q13,20 18,24 T28,24 T38,24"/><path d="M8,34 C13,34 15,28 21,28 C29,28 31,38 40,34"/></svg>'
+};
+(function(){
+  var o;try{o=JSON.parse(localStorage.getItem('aromaclip_lastorder'))}catch(e){o=null}
+  if(!o){document.getElementById('lead').innerHTML='We couldn’t find a recent order. <a href="index.html#collection" style="color:var(--amber)">Return to the collection</a>.';
+    document.querySelector('.order').style.display='none';document.querySelector('.o-total').style.display='none';return;}
+  document.getElementById('orderNo').textContent='Order '+o.number;
+  document.getElementById('lead').innerHTML='A receipt is on its way to <b>'+o.email+'</b>. We’ll email you again when it ships.';
+  var html='';(o.items||[]).forEach(function(it){
+    html+='<div class="o-row"><span>'+(ICONS[it.id]||'')+'</span>'
+      +'<div class="o-name">'+it.name+'<span>Qty '+it.qty+'</span></div>'
+      +'<div class="o-line">€'+(it.price*it.qty)+'</div></div>';});
+  document.getElementById('orderItems').innerHTML=html;
+  document.getElementById('orderTotal').textContent='€'+o.total;
+  document.getElementById('shipBlock').innerHTML='<span class="lbl">Shipping to</span>'+o.name+'<br>'+o.address;
+})();
+</script>
+</body>
+</html>
